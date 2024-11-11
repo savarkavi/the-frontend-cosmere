@@ -1,101 +1,115 @@
+"use client";
+
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { RxCross2 } from "react-icons/rx";
+
+const linksContainerVariant: Variants = {
+  initial: {
+    scale: 0,
+    borderRadius: "100%",
+  },
+  animate: {
+    scale: [0, 0.5, 0.5, 1],
+    borderRadius: ["100%", "100%", "5%", "5%"],
+    rotate: ["0deg", "0deg", "360deg", "360deg"],
+    transition: {
+      duration: 1,
+      delay: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  exit: {
+    scale: 0,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [isOpen, setIsOpen] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  return (
+    <div className="w-screen flex flex-col gap-4 justify-between items-center h-screen py-12">
+      <div className="fixed top-0 w-full h-full">
+        <Image
+          src="/landing_page_image.jpg"
+          alt="image"
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="w-full flex justify-between z-[99] px-16">
+        <h2 className="text-white text-3xl">TFC.</h2>
+        <motion.div
+          className="bg-white p-3 rounded-lg flex items-center gap-2 cursor-pointer"
+          whileHover={{ scale: 1.05, rotate: "1.5deg" }}
+          transition={{ duration: 0.2 }}
+          whileTap={{ scale: 1, rotate: 0 }}
+          onClick={() => setIsOpen(true)}
+        >
+          <p>Browse Projects</p>
+        </motion.div>
+      </div>
+      <motion.div
+        animate={{ opacity: isOpen ? 0 : 1 }}
+        transition={{ duration: 0.2 }}
+        className="fixed inset-1/2 -translate-x-1/2 w-full max-w-[1360px] flex flex-col justify-center items-center gap-2 text-white text-7xl uppercase font-semibold shrink-0 font-serif flex-1"
+      >
+        <h1>The Frontend</h1>
+        <h1>Cosmere</h1>
+      </motion.div>
+      <AnimatePresence mode="wait">
+        {isOpen && (
+          <motion.div
+            className="relative w-[500px] h-[500px] rounded-xl bg-white flex flex-col items-center justify-center p-4"
+            variants={linksContainerVariant}
+            initial="initial"
+            animate="animate"
+            exit="exit"
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 1.2 }}
+              className="absolute top-4 right-4 z-[999] cursor-pointer"
+            >
+              <RxCross2 className="text-3xl" onClick={() => setIsOpen(false)} />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 1.2 }}
+              className="flex flex-col gap-6 text-lg rounded-lg z-[999]"
+            >
+              <Link href="/scroll-parallex1">Scroll Parallex 1</Link>
+              <Link href="/navigation-menu">Navigation Menu</Link>
+              <Link href="/scroll-parallex2">Scroll Parallex 2</Link>
+              <Link href="/tinder-swipe-cards">Tinder Swipe Cards</Link>
+              <Link href="/navbar-animation">NavBar Animation</Link>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <div className="flex justify-between w-full px-16 z-[99]">
+        <div className="text-white font-serif self-end flex flex-col gap-4">
+          <p className="text-4xl uppercase">Welcome to the frontend cosmere</p>
+          <p className="max-w-[500px]">
+            The frontend cosmere is a web project where I showcase and curate
+            animations and effects and stunning visual experiences for Web
+            application, all crafted with Framer Motion and Next.js.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <p className="text-lg text-white self-end">
+          Made by{" "}
+          <span className="underline cursor-pointer font-semibold">
+            Sushant Sharma
+          </span>
+        </p>
+      </div>
     </div>
   );
 }
