@@ -52,7 +52,8 @@ const NavbarAnimation = () => {
       <div
         className="w-full h-screen relative flex flex-col items-center"
         style={{
-          backgroundImage: "url('/in_the_mood_for_love.jpg')",
+          backgroundImage:
+            "url('https://utfs.io/f/Inu8K5VGrlQTzCMCgzjFWrtg34YhkjT0mbFcA2KfIaDeM7GO')",
           backgroundRepeat: "no-repeat",
         }}
       >

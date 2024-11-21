@@ -38,7 +38,10 @@ const ScrollParallexPage = () => {
                 clipPath,
               }}
             >
-              <source src="/space-station.mp4" type="video/mp4" />
+              <source
+                src="https://utfs.io/f/Inu8K5VGrlQTYqsrYGh3TEJMkSGoK2m3ZlIvfPbrdtn75zyg"
+                type="video/mp4"
+              />
               Your browser does not support the video media.
             </motion.video>
             <motion.div
@@ -55,25 +58,25 @@ const ScrollParallexPage = () => {
           </motion.div>
           <div className="relative flex justify-center">
             <ParallexImage
-              src="/image1.jpg"
+              src="https://utfs.io/f/Inu8K5VGrlQT49wdqL40yGdtMFk58LbcVphYSlvDuK71CWQj"
               className="ml-[200px] rotate-12"
               start={200}
               end={-200}
             />
             <ParallexImage
-              src="/image2.jpg"
+              src="https://utfs.io/f/Inu8K5VGrlQTyK8KGxIgQbf6WLjEuiDPTBxo4CAnX52Nqz7a"
               className="ml-[100px] -rotate-12"
               start={100}
               end={-100}
             />
             <ParallexImage
-              src="/image4.jpg"
+              src="https://utfs.io/f/Inu8K5VGrlQTXcjd6rtynL0H7zUPOD9meqhIE3GvfTliWaMR"
               className="ml-[200px] rotate-12"
               start={500}
               end={-500}
             />
             <ParallexImage
-              src="/image5.jpg"
+              src="https://utfs.io/f/Inu8K5VGrlQTkgpGskBRqS9QmcJs2Vz7Pr1w8FLUWjZT60BK"
               className="-ml-[600px] rotate-6"
               start={450}
               end={-450}

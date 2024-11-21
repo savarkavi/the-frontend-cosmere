@@ -5,14 +5,38 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 const data = [
-  { id: 1, src: "/swipe_cards_image1.jpg" },
-  { id: 2, src: "/swipe_cards_image2.jpg" },
-  { id: 3, src: "/swipe_cards_image3.jpg" },
-  { id: 4, src: "/swipe_cards_image4.jpg" },
-  { id: 5, src: "/swipe_cards_image5.jpg" },
-  { id: 6, src: "/swipe_cards_image6.jpg" },
-  { id: 7, src: "/swipe_cards_image7.jpg" },
-  { id: 8, src: "/swipe_cards_image8.jpg" },
+  {
+    id: 1,
+    src: "https://utfs.io/f/Inu8K5VGrlQTNlOdh04wfWqhlAMP4Ft50de8rvizYnmR3EKx",
+  },
+  {
+    id: 2,
+    src: "https://utfs.io/f/Inu8K5VGrlQTjmwtPokzydNB5owvnfY9pX1L67PJDbR8UOas",
+  },
+  {
+    id: 3,
+    src: "https://utfs.io/f/Inu8K5VGrlQTtNISWK9nIlw73gd8jMzcLO56FUPTDuf2p1vB",
+  },
+  {
+    id: 4,
+    src: "https://utfs.io/f/Inu8K5VGrlQTInd1RDGrlQTVd3GsXRWhogqLuct4k92IHNwP",
+  },
+  {
+    id: 5,
+    src: "https://utfs.io/f/Inu8K5VGrlQTEtHDuO1mJS1IlzpPZt8Vbi7RMyxkF2cBneXY",
+  },
+  {
+    id: 6,
+    src: "https://utfs.io/f/Inu8K5VGrlQT1KsrpaN0asJBe6qchObnG9tSDzw3fFWrEo4g",
+  },
+  {
+    id: 7,
+    src: "https://utfs.io/f/Inu8K5VGrlQTxdQnD5MMCt6nA5SPjfWb7z2FLk1EdpwZB0l3",
+  },
+  {
+    id: 8,
+    src: "https://utfs.io/f/Inu8K5VGrlQTGoY3qZlfjLg7WwVxRMuiCN4S52vZhano8JAD",
+  },
 ];
 
 type Card = {

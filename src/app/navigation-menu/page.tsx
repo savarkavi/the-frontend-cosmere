@@ -96,11 +96,26 @@ const blurLinksVariant: Variants = {
 
 const navLinks = ["Home", "Shop", "About Us", "Lookbook", "Contact"];
 const navImages = [
-  { id: 0, src: "/navigation_menu_home.png" },
-  { id: 1, src: "/navigation_menu_shop.png" },
-  { id: 2, src: "/navigation_menu_about_us.png" },
-  { id: 3, src: "/navigation_menu_lookbook.png" },
-  { id: 4, src: "/navigation_menu_contact.png" },
+  {
+    id: 0,
+    src: "https://utfs.io/f/Inu8K5VGrlQTHctIyFEbPg8IFusCc39hAU0vQkBenfZJRWjw",
+  },
+  {
+    id: 1,
+    src: "https://utfs.io/f/Inu8K5VGrlQTB1GodXWH32DQm6WT4Vw0iRMPAS9eKvl1BUHG",
+  },
+  {
+    id: 2,
+    src: "https://utfs.io/f/Inu8K5VGrlQT6sANCsgPS8m0OovWbKN6pDAq4C5hw7MfGYJa",
+  },
+  {
+    id: 3,
+    src: "https://utfs.io/f/Inu8K5VGrlQT9zWn5Ww1DxIqiaHm72gyrfUA5ZSYlwnJbzVL",
+  },
+  {
+    id: 4,
+    src: "https://utfs.io/f/Inu8K5VGrlQTWWTZHwccJTu7g2PxeI3jvSZFDApfdzKHw5Ca",
+  },
 ];
 const navFooter = [
   { label: "Made By:", text: "Sushant" },
