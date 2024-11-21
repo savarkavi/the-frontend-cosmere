@@ -36,7 +36,7 @@ export default function Home() {
     <div className="w-screen flex flex-col gap-4 justify-between items-center h-screen py-12">
       <div className="fixed top-0 w-full h-full">
         <Image
-          src="/landing_page_image.jpg"
+          src="https://utfs.io/f/Inu8K5VGrlQTyWy2npIgQbf6WLjEuiDPTBxo4CAnX52Nqz7a"
           alt="image"
           fill
           className="object-cover"
